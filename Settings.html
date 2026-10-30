@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Jonawebsite</title>
+    <link id="favicon" rel="icon" type="image/svg+xml">
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <!-- Site header -->
+    <header class="nav-header">
+        <div class="title-area">
+            <h1>Jonathan's Website</h1>
+            <p id="splash"></p>
+        </div>
+
+        <!-- Main navigation -->
+        <nav>
+            <a href="index.html"><button class="nav-button"><i data-lucide="house"></i><span class="nav-button-text">home</span></button></a>
+            <a href="About.html"><button class="nav-button"><i data-lucide="user"></i><span class="nav-button-text">about me</span></button></a>
+            <a href="Projects.html"><button class="nav-button"><i data-lucide="list"></i><span class="nav-button-text">projects</span></button></a>
+            <a href="Socials.html"><button class="nav-button"><i data-lucide="message-circle"></i><span class="nav-button-text">socials</span></button></a>
+        </nav>
+
+        <!-- Header controls -->
+        <div class="round_buttons">
+            <button class="round_button" id="close-header" onclick="closeheader()"><i data-lucide="arrow-up"></i></button>
+            <a href="Settings.html"><button class="round_button"><i data-lucide="settings"></i></button></a>
+        </div>
+    </header>
+
+    <!-- Settings panel -->
+    <div class="bio">
+        <h2>Settings</h2>
+        <div class="settings-panel">
+            <!-- Theme switches -->
+            <div class="setting-row">
+                <label class="setting-copy" for="darkmode">
+                    <i data-lucide="moon"></i>
+                    <span>
+                        <strong>Dark theme</strong>
+                        <small>maakt de website beter voor de ogen (hopelijk) en voegt een mooie sterrennacht toe!!</small>
+                    </span>
+                </label>
+                <input type="checkbox" class="checkbox" id="darkmode" name="darkmode" value="darkmode">
+            </div>
+
+            <div class="setting-row">
+                <label class="setting-copy" for="lightmode">
+                    <i data-lucide="sun"></i>
+                    <span>
+                        <strong>Light theme</strong>
+                        <small>geeft de website een professionele look</small>
+                    </span>
+                </label>
+                <input type="checkbox" class="checkbox" id="lightmode" name="lightmode" value="lightmode">
+            </div>
+
+            <!-- Splash setting -->
+            <div class="setting-row">
+                <label class="setting-copy" for="splashtext">
+                    <i data-lucide="message-square-text"></i>
+                    <span>
+                        <strong>Splash text</strong>
+                        <small>Toon de splashtext tekst naast mijn logo</small>
+                    </span>
+                </label>
+                <input type="checkbox" class="checkbox" id="splashtext" name="splashtext" value="splashtext">
+            </div>
+
+            <!-- Theme color -->
+            <div class="setting-row">
+                <label class="setting-copy" for="theme-color">
+                    <i data-lucide="palette"></i>
+                    <span>
+                        <strong>Theme color</strong>
+                        <small>Kies de hoofdkleur van de website</small>
+                    </span>
+                </label>
+
+                <div class="color-controls">
+                    <input type="color" class="color-picker" id="theme-color" name="theme-color" value="#00c91e">
+                    <div class="color-presets" aria-label="Theme presets">
+                        <button type="button" class="color-preset" data-color="#00c91e" style="--preset-color: #00c91e" aria-label="Green"></button>
+                        <button type="button" class="color-preset" data-color="#004cff" style="--preset-color: #004cff" aria-label="Blue"></button>
+                        <button type="button" class="color-preset" data-color="#8c2cff" style="--preset-color: #8c2cff" aria-label="Purple"></button>
+                        <button type="button" class="color-preset" data-color="#e52b2b" style="--preset-color: #e52b2b" aria-label="Red"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setting-row">
+                <label class="setting-copy" for="clock">
+                <i data-lucide="clock"></i>
+                <span>
+                        <span class="clock"></span>
+                        <small>huidige tijd</small>
+                </span>
+                </label>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Shared scripts -->
+    <script src="script.js"></script>
+    <script src="icons.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

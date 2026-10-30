@@ -1,0 +1,1124 @@
+/* Theme colors */
+:root {
+    --color1: rgb(0, 201, 30);
+    --color2: rgb(0, 48, 16);
+    --color3: rgb(0, 65, 22);
+    --highlight: rgb(0, 0, 0);
+    --title-color: black;
+    --button-hover: rgb(0, 91, 43);
+    --text-color: white;
+}
+
+.dark-theme {
+    --color1: rgb(0, 13, 201);
+    --color2: rgb(5, 0, 48);
+    --color3: rgb(16, 0, 86);
+    --highlight: rgb(255, 255, 255);
+    --title-color: white;
+    --button-hover: rgb(0, 2, 91);
+    --text-color: white;
+}
+
+.light-theme {
+    --color1: rgb(209, 245, 215);
+    --color2: rgb(255, 255, 255);
+    --color3: rgb(240, 240, 240);
+    --highlight: rgb(0, 0, 0);
+    --title-color: black;
+    --button-hover: rgb(200, 200, 200); 
+    --text-color: black;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "Minecraft";
+    src: url("fonts/Minecraft.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Oxanium";
+    src: url("fonts/Oxanium-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Oxanium";
+    src: url("fonts/Oxanium-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+ font-family: "Cascadia code";
+ src: url("fonts/CascadiaCode-VariableFont_wght.ttf") format("truetype");
+ font-weight: 700;
+ font-style: normal;
+ font-display: swap;
+
+}
+
+/* Page background */
+.body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color3);
+}
+
+.dark-theme .body {
+    background-image: url("images/stars3.gif");
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto;
+    background-blend-mode: normal;
+    animation: none;
+}
+
+/* Header and navigation */
+.nav-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 10px;
+    z-index: 200;
+    background-color: var(--color1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.277);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.nav-header h1 {
+    margin: 0;
+    color: var(--title-color);
+    font-family: "Oxanium";
+    font-size: clamp(16px, 3vw, 32px);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.title-area {
+    position: relative;
+}
+
+.nav-header nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-header a {
+    text-decoration: none;
+}
+
+.nav-button {
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    border: 0;
+    background-color: var(--color2);
+    color: var(--text-color);
+    font-family: "Oxanium";
+    font-size: clamp(5px, 3vw, 16px);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.25s;
+    border-radius: 1px;
+}
+
+.nav-button svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.nav-button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1) translateY(-2px);
+}
+
+.nav-header a[aria-current="page"] .nav-button {
+    background-color: var(--color2);
+    outline: 3px solid var(--highlight);
+}
+
+/* Splash text */
+#splash {
+    position: absolute;
+    bottom: -10px;
+    left: 100%;
+    z-index: 10;
+    width: 200px;
+    margin: 0;
+    color: rgb(255, 234, 0);
+    font-family: "Minecraft";
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 3px 0 #8a6f00;
+    white-space: nowrap;
+    user-select: none;
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: translateX(-50%) rotate(-5deg) scale(1);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(-8deg) scale(1.15);
+    }
+}
+
+
+
+/* About text effects */
+.TextEffect {
+    display: inline-block;
+    font-family: "Minecraft";
+    color: var(--text-color);
+   
+    font-size: 18px;
+}
+
+.TextEffect > span {
+    display: inline-block;
+    transition: font-size 0.3s ease;
+}
+
+.TextEffect:hover > span {
+    animation: text-wave 1.2s ease-in-out 1;
+    animation-delay: calc(var(--letter-index) * 0.08s);
+    font-size: 20px;
+}
+
+@keyframes text-wave {
+    0%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-0.3em);
+    }
+}
+
+.Age {
+    font-family: "Minecraft";
+    font-size: 18px;
+    transition: font-size 0.3s ease;
+}
+
+.Age:hover {
+    font-size: 20px;
+}
+
+.bigtext {
+    font-size: 20px;
+}
+
+/* Header controls */
+.round_buttons {
+    position: absolute;
+    right: 10px;
+    bottom: -40px;
+    display: flex;
+    gap: 8px;
+}
+
+.round_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color3);
+    border-radius: 50%;
+    background-color: var(--color2);
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.round_button svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-header.header-hidden #close-header svg {
+    transform: rotate(180deg);
+}
+
+.round_button:hover {
+    background-color: var(--button-hover);
+}
+
+.round_buttons a[aria-current="page"] .round_button {
+    outline: 3px solid var(--highlight);
+    outline-offset: -3px;
+}
+
+/* Shared page content */
+.bio {
+    max-width: 960px;
+    min-height: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    overflow-wrap: break-word;
+    border-radius: 12px;
+    background-color: var(--color2);
+    color: var(--text-color);
+    font-family: "Oxanium";
+    font-size: 18px;
+}
+
+.bio-image {
+    display: block;
+    width: min(200px, 100%);
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    object-fit: contain;
+}
+
+.bio img,
+.bio video,
+.bio iframe {
+    max-width: 100%;
+}
+
+.bio img,
+.bio video {
+    height: auto;
+    object-fit: contain;
+}
+
+.bio p {
+    margin: 0 0 30px;
+}
+
+.bio h2 {
+    margin-top: 0;
+}
+
+/* Home page */
+.intro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    justify-content: left;
+    gap: 24px;
+    align-items: start;
+}
+
+
+
+.bio .introimage {
+    width: min(360px, 100%);
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    object-fit: cover;
+    justify-self: center;
+}
+
+.introcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    justify-self: center;
+    width: min(360px, 100%);
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    min-width: 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.introcontent h2 {
+    margin-bottom: 12px;
+    font-size: 36px;
+}
+
+.introcontent p {
+    margin-bottom: 16px;
+    line-height: 1.4;
+     font-size: 16px;
+}
+
+
+.homelinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+}
+
+.homebutton {
+    padding: 10px 12px;
+    border-radius: 7px;
+    background-color: var(--color3);
+    color: var(--text-color);
+    font-family: "oxanium";
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 2px solid var(--text-color);
+}
+
+.homebutton:hover {
+    background-color: var(--button-hover);
+}
+
+/* Projects page */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-tile {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 300px;
+    min-width: 220px;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: rgb(7, 3, 19);
+
+    font-size: 24px;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: left;
+
+    user-select: none;
+}
+
+.project-tile::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: var(--project-background);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    transition: transform 0.3s ease;
+}
+
+.project-tile:hover::before,
+.project-tile:focus-visible::before {
+    transform: scale(1.1);
+}
+
+.project-tile.wide {
+    grid-column: span 2;
+}
+
+
+.project1 {
+   --project-background:
+        linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+        url("images/project-thumbnails/project\ roll\ a\ ball.png");
+}
+
+.project2 {
+    --project-background:
+        linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+        url("images/project-thumbnails/WebsiteProject.png");
+}
+
+.project3 {
+    --project-background:
+        linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+        url("images/images.png");
+}
+
+/* About page */
+.Centered-Title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 80px;
+    font-family: "Oxanium";
+    font-size: 36px;
+}
+
+.big-title {
+margin-bottom: 40px;
+
+}
+
+.name-banner {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background-color: black;
+    background-image: url("images/stars3.gif");
+    background-repeat: repeat;
+    background-position: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+.nyan-name {
+    font-size: clamp(32px, 8vw, 80px);
+    font-family: "Oxanium";
+    color: rgb(255, 255, 253);
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+    user-select: none;
+}
+
+
+.nyan-name > span {
+    display: inline-block;
+    transition: font-size 0.3s ease;
+    animation: wave 1.2s ease-in-out infinite;
+    animation-delay: calc(var(--letter-index) * 0.08s);
+}
+/* rainbow wave */
+@keyframes wave {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-2px);
+    }
+
+    75% {
+        transform: translateY(2px);
+    }
+}
+
+
+
+
+
+
+
+
+.about-banners {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.about-banner {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 3 / 1;
+}
+
+.quality-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 8 / 1;
+    overflow: hidden;
+    color: white;
+    font-family: "Oxanium";
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 700;
+    text-align: center;
+}
+
+.creatief {
+    background: linear-gradient(90deg, #8d0cfd, #ff2793);
+}
+
+.leergierig {
+    background: linear-gradient(90deg, #11aafc, #1be1ff);
+}
+
+.adaptief {
+    background: linear-gradient(90deg, #fd530f, #fccd10);
+}
+
+.centered {
+text-align: center;
+}
+
+.about-banner .banner-frame {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.about-banner video.banner-frame {
+    image-rendering: auto;
+}
+
+/* Code banner */
+.codebanner-background {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.binary-rain {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.codetext {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: clamp(32px, 8vw, 80px);
+    font-family: "Cascadia Code";
+}
+
+.codeletters > span {
+    display: inline-block;
+}
+
+.about-banner:hover .codeletters > span {
+    animation: code-letter-pulse 0.6s steps(2, end) both;
+    animation-delay: calc(var(--letter-index) * 0.06s);
+}
+
+.about-banner:hover .codetext > span {
+    animation: code-letter-pulse 0.6s steps(2, end) both;
+    animation-delay: calc(var(--letter-index) * 0.06s);
+}
+
+.type {
+    animation: blink-anim 1s steps(1) infinite;
+}
+
+@keyframes blink-anim {
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes code-letter-pulse {
+    0%,
+    100% {
+        transform: translateY(0);
+        color: rgb(255, 255, 255);
+        text-shadow: none;
+        
+    }
+
+    35% {
+        transform: translateY(-7px);
+        color: rgb(0, 255, 0);
+        content: "0";
+       
+    }
+    65% {
+        transform: translateY(3px);
+        color: white;
+        text-shadow: 2px 0 rgb(0, 255, 0);
+    }
+}
+
+.banner-edge-fade {
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+}
+
+.banner-frame-2 {
+    animation: change-banner-frame 1s step-end infinite;
+}
+
+@keyframes change-banner-frame {
+    0%,
+    49.999% {
+        opacity: 0;
+    }
+
+    50%,
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Placeholder page */
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-family: "Oxanium";
+    font-size: 30px;
+}
+
+/* Showcase pages */
+.bio .showcaseimage {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+   
+}
+
+.bio .description {
+    font-family: "Oxanium";
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgb(176, 176, 176);
+    margin-top: 10px;
+}
+
+/* Photo slider */
+.sliderframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.bio .sliderimage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sliderbutton {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.slider:hover .sliderbutton,
+.slider:focus-within .sliderbutton {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.prevbutton {
+    left: 12px;
+}
+
+.nextbutton {
+    right: 12px;
+}
+
+.sliderdots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+    transform: translateX(-50%);
+}
+
+.sliderdot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.sliderdot.active {
+    background-color: white;
+}
+
+
+
+
+@media (hover: none) {
+    .sliderbutton {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Settings page */
+.settings-panel {
+    display: grid;
+    gap: 14px;
+    max-width: 620px;
+
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px;
+    background-color: var(--color3);
+    border-radius: 12px;
+}
+
+.setting-copy {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.setting-copy svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.setting-copy span {
+    display: grid;
+    gap: 4px;
+    font-family: "Minecraft";
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.setting-copy strong {
+    font-family: "Minecraft";
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.setting-copy small {
+    font-family: "Oxanium";
+    font-size: 14px;
+    line-height: 1.35;
+    opacity: 0.8;
+}
+
+.setting-row .checkbox {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+}
+
+.color-controls,
+.color-presets {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.color-picker {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background: var(--color2);
+    cursor: pointer;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+    border: 0;
+    border-radius: 3px;
+}
+
+.color-picker::-moz-color-swatch {
+    border: 0;
+    border-radius: 3px;
+}
+
+.color-preset {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: var(--preset-color);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-preset:not(:disabled):hover,
+.color-preset:not(:disabled):focus-visible {
+    border-color: var(--highlight);
+    outline: none;
+    transform: scale(1.15);
+}
+
+.color-picker:disabled,
+.color-preset:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.checkbox {
+    cursor: pointer;
+    accent-color: var(--color1);
+}
+
+.checkbox-label,
+.slidecontainer label {
+    color: var(--text-color);
+    font-family: "Minecraft";
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkbox-label svg,
+.slidecontainer svg {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.slidecontainer {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Socials page */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+.Social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 264px;
+    max-width: 100%;
+    min-height: 54px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(88, 101, 242);
+    border-radius: 8px;
+    background-color: rgb(26, 26, 30);
+    color: white;
+    font-family: "Minecraft";
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.Social-button > svg,
+.Social-button img,
+.social-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.Social-button img {
+    display: block;
+    margin: 0;
+}
+
+#gmail {
+    border-color: rgb(234, 67, 53);
+}
+
+#gmail:hover {
+    color: rgb(234, 67, 53);
+}
+
+.social-icon {
+    position: relative;
+    display: block;
+}
+
+.social-icon .social-logo {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.2s ease;
+}
+
+.social-logo-hover {
+    opacity: 0;
+}
+
+.Social-button:hover {
+    border-color: white;
+    background-color: rgb(60, 60, 68);
+    color: rgb(88, 101, 242);
+}
+
+.Social-button:hover .social-logo-default {
+    opacity: 0;
+}
+
+.Social-button:hover .social-logo-hover {
+    opacity: 1;
+}
+
+/* Mobile layout */
+@media (max-width: 720px) {
+    #splash,
+    .nav-header h1,
+    .nav-button-text {
+        display: none;
+    }
+
+    .nav-header,
+    .nav-header nav {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        padding: 17px;
+        border-radius: 30%;
+    }
+
+    .nav-button svg {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        margin-right: 0;
+    }
+
+    .bio {
+        width: auto;
+        margin: 20px;
+        font-size: 14px;
+    }
+
+    .bio-image {
+        margin: 20px auto;
+    }
+
+    .bio video,
+    .bio iframe {
+        width: 100%;
+    }
+
+    .bio iframe {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+
+    .bio .introimage {
+        width: min(360px, 100%);
+        aspect-ratio: 1;
+        justify-self: center;
+    }
+
+    .introcontent {
+        width: min(360px, 100%);
+    }
+
+    .homebutton {
+        text-align: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-tile.wide {
+        grid-column: span 1;
+    }
+
+    .setting-row,
+    .setting-heading {
+        align-items: flex-start;
+    }
+
+    .round_button {
+        width: 40px;
+        height: 40px;
+        border-width: 3px;
+    }
+
+    .round_buttons {
+        right: 10px;
+        bottom: -50px;
+    }
+
+}

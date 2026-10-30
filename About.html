@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Jonawebsite</title>
+    <link id="favicon" rel="icon" type="image/svg+xml">
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <!-- Site header -->
+    <header class="nav-header">
+        <div class="title-area">
+            <h1>Jonathan's Website</h1>
+            <p id="splash"></p>
+        </div>
+
+        <!-- Main navigation -->
+        <nav>
+            <a href="index.html"><button class="nav-button"><i data-lucide="house"></i><span class="nav-button-text">home</span></button></a>
+            <a href="About.html"><button class="nav-button"><i data-lucide="user"></i><span class="nav-button-text">about me</span></button></a>
+            <a href="Projects.html"><button class="nav-button"><i data-lucide="list"></i><span class="nav-button-text">projects</span></button></a>
+            <a href="Socials.html"><button class="nav-button"><i data-lucide="message-circle"></i><span class="nav-button-text">socials</span></button></a>
+        </nav>
+
+        <!-- Header controls -->
+        <div class="round_buttons">
+            <button class="round_button" id="close-header" onclick="closeheader()"><i data-lucide="arrow-up"></i></button>
+            <a href="Settings.html"><button class="round_button"><i data-lucide="settings"></i></button></a>
+        </div>
+    </header>
+
+    <!-- About content -->
+    <div class="bio">
+        <h1 class="big-title">Dit ben ik:</h1>
+
+        <!-- Empty name banner -->
+        <div class="name-banner banner-edge-fade">
+            <h1 class="nyan-name SplitText">Jonathan Schilstra</h1>
+        </div>
+
+        <p>Ik ben <span class="TextEffect SplitText bigtext">Jonathan Schilstra.</span>, <span class="Age">15</span> jaar, een Nederlandse softwareontwikkelaar in opleiding, pixel artist, en hobby gamedeveloper.</p>
+        <p>Ik ben een student op het <span class="TextEffect SplitText">Firda</span> in leeuwarden, waar ik de opleiding: "IT en Digitalisering: Software Development" volg.</p>
+        <p>In mijn vrije tijd doe ik aan  <span class="TextEffect SplitText">programmeren</span>,  <span class="TextEffect SplitText">game development</span>, en <span class="TextEffect SplitText">scouting.</span></p>
+
+
+
+        <!-- Skill banners -->
+        <h2 class="centered">Skills:</h2>
+        <div class="about-banners">
+            <a class="about-banner animated-banner" href="skills/PixelArt.html">
+                <img class="banner-frame" src="images/Banners/Banner_PixelArt.png" alt="Bekijk mijn pixel art">
+                <img class="banner-frame banner-frame-2" src="images/Banners/Banner_PixelArt_Frame2.png" alt="">
+            </a>
+
+            <a class="about-banner" href="skills/3DModelling.html" aria-label="Bekijk mijn 3D-modellen">
+                <video class="banner-frame banner-edge-fade" autoplay muted loop playsinline preload="auto">
+                    <source src="images/Banners/3dModelsBanner.webm" type="video/webm">
+                </video>
+            </a>
+
+            <a class="about-banner" href="skills/Coding.html" aria-label="Bekijk mijn codeerprojecten">
+                <div class="codebanner-background banner-edge-fade">
+
+
+                    <!-- https://codepen.io/yaclive/pen/EayLYO -->
+                    <canvas class="binary-rain" aria-hidden="true"></canvas>
+
+                    <h1 class="codetext">
+                             <span class="codeletters SplitText">[CODING]</span><span class="type">_</span>
+                    </h1>
+                </div>
+            </a>
+            <h2 class="centered">Kwaliteiten (placeholder):</h2>
+
+            <!-- Empty banners for personal qualities -->
+            <div class="quality-banner creatief banner-edge-fade">Creatief</div>
+            <div class="quality-banner leergierig banner-edge-fade">Leergierig</div>
+            <div class="quality-banner adaptief banner-edge-fade">adaptief</div>
+
+        </div>
+    </div>
+
+    <!-- Shared scripts -->
+    <script src="script.js"></script>
+    <script src="icons.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

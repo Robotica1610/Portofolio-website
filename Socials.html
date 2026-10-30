@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socials | Jonawebsite</title>
+    <link id="favicon" rel="icon" type="image/svg+xml">
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <!-- Site header -->
+    <header class="nav-header">
+        <div class="title-area">
+            <h1>Jonathan's Website</h1>
+            <p id="splash"></p>
+        </div>
+
+        <!-- Main navigation -->
+        <nav>
+            <a href="index.html"><button class="nav-button"><i data-lucide="house"></i><span class="nav-button-text">home</span></button></a>
+            <a href="About.html"><button class="nav-button"><i data-lucide="user"></i><span class="nav-button-text">about me</span></button></a>
+            <a href="Projects.html"><button class="nav-button"><i data-lucide="list"></i><span class="nav-button-text">projects</span></button></a>
+            <a href="Socials.html"><button class="nav-button"><i data-lucide="message-circle"></i><span class="nav-button-text">socials</span></button></a>
+        </nav>
+
+        <!-- Header controls -->
+        <div class="round_buttons">
+            <button class="round_button" id="close-header" onclick="closeheader()"><i data-lucide="arrow-up"></i></button>
+            <a href="Settings.html"><button class="round_button"><i data-lucide="settings"></i></button></a>
+        </div>
+    </header>
+
+    <!-- Contact links -->
+    <div class="bio">
+        <h2>Socials</h2>
+        <div class="social-links">
+            <a href="https://discord.com/users/1268632286161666138"><button class="Social-button" id="discord"><span class="social-icon"><img class="social-logo social-logo-default" src="images/discord-round-line-white-icon.png" alt="Discord icon"><img class="social-logo social-logo-hover" src="images/discord-round-line-black-icon.png" alt=""></span>discord/@Roboticat1610</button></a>
+            <a href="mailto:jonathanschilstra@gmail.com"><button class="Social-button" id="gmail"><i data-lucide="mail"></i>jonathanschilstra@gmail.com</button></a>
+        </div>
+    </div>
+
+    <!-- Shared scripts -->
+    <script src="script.js"></script>
+    <script src="icons.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

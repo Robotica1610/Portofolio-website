@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Website | Jonawebsite</title>
+    <link id="favicon" rel="icon" type="image/svg+xml">
+    <script src="../theme-init.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body">
+    <!-- Site header -->
+    <header class="nav-header">
+        <div class="title-area">
+            <h1>Jonathan's Website</h1>
+            <p id="splash"></p>
+        </div>
+
+        <!-- Main navigation -->
+        <nav>
+            <a href="../index.html"><button class="nav-button"><i data-lucide="house"></i><span class="nav-button-text">home</span></button></a>
+            <a href="../About.html"><button class="nav-button"><i data-lucide="user"></i><span class="nav-button-text">about me</span></button></a>
+            <a href="../Projects.html"><button class="nav-button"><i data-lucide="list"></i><span class="nav-button-text">projects</span></button></a>
+            <a href="../Socials.html"><button class="nav-button"><i data-lucide="message-circle"></i><span class="nav-button-text">socials</span></button></a>
+        </nav>
+
+        <!-- Header controls -->
+        <div class="round_buttons">
+            <button class="round_button" id="close-header" onclick="closeheader()"><i data-lucide="arrow-up"></i></button>
+            <a href="../Settings.html"><button class="round_button"><i data-lucide="settings"></i></button></a>
+        </div>
+    </header>
+
+  <!-- Photo slider -->
+<div class="bio">
+  <div class="slider">
+
+    <!-- data  -->
+    <div id="slides-data" hidden>
+      <div class="slide-data">
+        <img src="../images/project-thumbnails/WebsiteProject.png" alt="Website Project">
+        <p>Dit is mijn website.</p>
+      </div>
+      <div class="slide-data">
+        <img src="../images/Screenshots/Screenshot_banner_pixelart.png" alt="Pixel art banner in Paint.NET">
+        <p>In Paint.NET maak ik de pixel art voor de banner.</p>
+      </div>
+      <div class="slide-data">
+        <img src="../images/Screenshots/Screenshot_banner_blender.png" alt="3D model banner in Blender">
+        <p>Hier maak ik de 3D-model banner voor mijn website.</p>
+      </div>
+    </div>
+
+
+   
+    <div class="sliderframe">
+      <img src="../images/project-thumbnails/WebsiteProject.png" alt="Huidige foto" id="slider-image">
+      
+      <!-- Sliderbuttons -->
+      <button class="round_button sliderbutton prevbutton" id="prevbutton" type="button" aria-label="Vorige foto">
+        <i data-lucide="arrow-left"></i>
+      </button>
+      <button class="round_button sliderbutton nextbutton" id="nextbutton" type="button" aria-label="Volgende foto">
+        <i data-lucide="arrow-right"></i>
+      </button>
+      
+      <!-- Slider dots -->
+      <div class="sliderdots">
+        <button class="sliderdot active" type="button" aria-label="Bekijk foto 1"></button>
+        <button class="sliderdot" type="button" aria-label="Bekijk foto 2"></button>
+        <button class="sliderdot" type="button" aria-label="Bekijk foto 3"></button>
+      </div>
+    </div>
+
+    <p class="description" id="slidertext">
+      Dit is mijn website.
+    </p>
+  </div>
+</div>
+
+    <!-- Shared scripts -->
+    <script src="../script.js"></script>
+    <script src="../icons.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
